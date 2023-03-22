@@ -104,7 +104,7 @@ export class ShowBusiness {
 
       return orderedShows
     } catch (error: any) {
-      throw new CustomError(400, error.message)
+      throw new CustomError(error.statusCode, error.message)
     }
   }
 }

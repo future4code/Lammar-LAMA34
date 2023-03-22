@@ -114,7 +114,7 @@ describe("Login Tests", () => {
             await userBusiness.login(input)
         } catch (error: any) {
             expect(error).toBeInstanceOf(CustomError)
-            expect(error.statusCode).toBe(400)
+            expect(error.statusCode).toBe(404)
             expect(error.message).toBe("User not found.")
         }
     })
@@ -129,7 +129,7 @@ describe("Login Tests", () => {
             await userBusiness.login(input)
         } catch (error: any) {
             expect(error).toBeInstanceOf(CustomError)
-            expect(error.statusCode).toBe(400)
+            expect(error.statusCode).toBe(401)
             expect(error.message).toBe("Wrong password.")
         }
     })

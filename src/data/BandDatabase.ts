@@ -26,9 +26,13 @@ export class BandDatabase extends BaseDatabase implements BandRepository {
       const result = await BandDatabase.connection(BandDatabase.TABLE_NAME)
         .select().where({ id })
 
-      return Band.toBandModel(result[0])
+      if (result.length !== 0) {
+        return Band.toBandModel(result[0])
+      } else {
+        return undefined
+      }
     } catch (error: any) {
-      throw new CustomError(400, error.message);
+      throw new CustomError(error.statusCode, error.message);
     }
   }
 
@@ -48,7 +52,7 @@ export class BandDatabase extends BaseDatabase implements BandRepository {
         return undefined
       }
     } catch (error: any) {
-      throw new CustomError(400, error.message);
+      throw new CustomError(error.statusCode, error.message);
     }
   }
 

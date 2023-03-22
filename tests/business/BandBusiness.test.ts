@@ -64,7 +64,7 @@ describe("getBandById Tests", () => {
             await bandBusiness.getBandById(token, id)
         } catch (error: any) {
             expect(error).toBeInstanceOf(CustomError)
-            expect(error.statusCode).toBe(400)
+            expect(error.statusCode).toBe(422)
             expect(error.message).toBe("id and token must be provided.")
         }
     })
@@ -105,7 +105,7 @@ describe("getBands Tests", () => {
             await bandBusiness.getBands(token)
         } catch (error: any) {
             expect(error).toBeInstanceOf(CustomError)
-            expect(error.statusCode).toBe(400)
+            expect(error.statusCode).toBe(422)
             expect(error.message).toBe("token must be provided.")
         }
     })
