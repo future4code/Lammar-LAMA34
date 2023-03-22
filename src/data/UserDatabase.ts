@@ -21,9 +21,13 @@ export class UserDatabase extends BaseDatabase implements UserRepository {
       const result = await UserDatabase.connection(UserDatabase.TABLE_NAME)
         .select().where({ email })
 
-      return User.toUserModel(result[0]);
+      if (result.length !== 0) {
+        return User.toUserModel(result[0])
+      } else {
+        return undefined
+      }
     } catch (error: any) {
-      throw new CustomError(400, error.message);
+      throw new CustomError(error.statusCode, error.message);
     }
   }
 }

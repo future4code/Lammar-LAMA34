@@ -85,7 +85,7 @@ describe("getShowsByDate Tests", () => {
             await showBusiness.getShowsByDate(token, weekDay)
         } catch (error: any) {
             expect(error).toBeInstanceOf(CustomError)
-            expect(error.statusCode).toBe(400)
+            expect(error.statusCode).toBe(422)
             expect(error.message).toBe("weekDay and token must be provided.")
         }
     })

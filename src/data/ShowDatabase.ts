@@ -38,7 +38,7 @@ export class ShowDatabase extends BaseDatabase implements ShowRepository {
         return undefined
       }
     } catch (error: any) {
-      throw new CustomError(400, error.message);
+      throw new CustomError(error.statusCode, error.message);
     }
   }
 

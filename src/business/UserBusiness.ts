@@ -63,8 +63,7 @@ export class UserBusiness {
       const { email, password } = input;
 
       if (!email || !password) {
-        throw new CustomError(400, "email and password must be provided."
-        );
+        throw new CustomError(422, "email and password must be provided.")
       }
 
       const user = await this.userDatabase.findUserByEmail(email)
@@ -83,7 +82,7 @@ export class UserBusiness {
 
       return token
     } catch (error: any) {
-      throw new CustomError(400, error.message)
+      throw new CustomError(error.statusCode, error.message)
     }
   }
 

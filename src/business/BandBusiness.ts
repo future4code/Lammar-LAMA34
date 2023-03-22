@@ -67,7 +67,7 @@ export class BandBusiness {
 
       return band
     } catch (error: any) {
-      throw new CustomError(400, error.message)
+      throw new CustomError(error.statusCode, error.message)
     }
   }
 
@@ -87,7 +87,7 @@ export class BandBusiness {
 
       return bands
     } catch (error: any) {
-      throw new CustomError(400, error.message)
+      throw new CustomError(error.statusCode, error.message)
     }
   }
 }
