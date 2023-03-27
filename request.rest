@@ -1,0 +1,54 @@
+### SIGN UP
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "João",
+    "email": "joao@email.com",
+    "password": "123456",
+    "role": "admin"
+}
+
+### LOGIN
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "joaovitorglr",
+   "password": "123456"
+}
+
+### CREATE BAND
+POST http://localhost:3003/band/create
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmMDEyMzg5LWVmOTctNDE2MC1hMTc4LWZhODk3YzI5ODQ3YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTE2NTExOCwiZXhwIjoxNjc5MTY2OTE4fQ.xsIRMvPpP8vhddPQpTl0_7N4DUxMn-1b5rWs_xH56BM
+Content-Type: application/json
+
+{
+    "name": "Audioslave",
+    "musicGenre": "Rock",
+    "responsible": "Chris Cornell"
+}
+
+### GET BANDS
+GET http://localhost:3003/band
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmMDEyMzg5LWVmOTctNDE2MC1hMTc4LWZhODk3YzI5ODQ3YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTE2NTkzNywiZXhwIjoxNjc5MTY3NzM3fQ.hQFHGlo8GmP2-XqPsO2_WQEc4MwEZWhOnjDvrCFhaQk
+
+### GET BAND BY ID
+GET http://localhost:3003/band/5dfe4b49-d2bb-44dc-a6a0-b1e63cf864d8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxNmE5Y2Y3LWVmN2UtNDA4Yy1iMThmLTY3MTU4NjVhYzFkYSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTE2NTE5MCwiZXhwIjoxNjc5MTY2OTkwfQ.QtO8Lsh73B5HmAlbxfmIvhCSJ5bawaWhSQHYC8nDeig
+
+### CREATE SHOW
+POST http://localhost:3003/show/create
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmMDEyMzg5LWVmOTctNDE2MC1hMTc4LWZhODk3YzI5ODQ3YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTE2NTkzNywiZXhwIjoxNjc5MTY3NzM3fQ.hQFHGlo8GmP2-XqPsO2_WQEc4MwEZWhOnjDvrCFhaQk
+Content-Type: application/json
+
+{
+    "weekDay": "sunday",
+    "startTime": 17,
+    "endTime": 20,
+    "bandId": "5dfe4b49-d2bb-44dc-a6a0-b1e63cf864d8"
+}
+
+### GET SHOW BY DAY
+GET http://localhost:3003/show/sunday
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmMDEyMzg5LWVmOTctNDE2MC1hMTc4LWZhODk3YzI5ODQ3YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTE2NTkzNywiZXhwIjoxNjc5MTY3NzM3fQ.hQFHGlo8GmP2-XqPsO2_WQEc4MwEZWhOnjDvrCFhaQk
